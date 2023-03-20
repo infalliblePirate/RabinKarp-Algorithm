@@ -5,13 +5,10 @@ public class RabinKarp {
     private int hashFirst;
     private int length;
 
-    //mb static
-    protected int hashing(String word) {
+     int hashing(String word) {
         // H = ci*A^(l-i), l -> length
 
         word = word.toLowerCase();
-
-
         length = word.length();
         int code = 0;
 
@@ -24,7 +21,7 @@ public class RabinKarp {
         return code;
     }
 
-    protected int rollingHash(String word, char addChar) {
+    int rollingHash(String word, char addChar) {
 
         word = word.toLowerCase();
         int code = (previousHash - hashFirst) * CONST + addChar;
@@ -33,6 +30,7 @@ public class RabinKarp {
 
         return code;
     }
+
     public void setHashFirst(int hashFirst) {
         this.hashFirst = hashFirst;
     }
